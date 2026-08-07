@@ -6,8 +6,17 @@
 	"main": ".svelte-kit/cloudflare/_worker.js",
 	"assets": {
 		"binding": "ASSETS",
-		"directory": ".svelte-kit/cloudflare"
+		"directory": ".svelte-kit/cloudflare",
+		"html_handling": "auto-trailing-slash",
+		"not_found_handling": "404-page"
 	},
 	"workers_dev": true,
-	"preview_urls": true
+	"preview_urls": true,
+	"observability": {
+		"enabled": true
+	},
+	// Workers Caching — honors Cache-Control from the Worker / static assets.
+	"cache": {
+		"enabled": true
+	}
 }
