@@ -17,7 +17,7 @@
 	<div>
 		<p class="home-intro__eyebrow">Personal site</p>
 		<h1 id="home-title" class="home-intro__title">{site.name}</h1>
-		<p class="home-intro__lede">Something exciting will be put here :)</p>
+		<p class="home-intro__lede">Energy professional. Technology builder. 20+ years turning complex problems into practical solutions</p>
 	</div>
 	<aside class="home-intro__aside">
 		<strong>Status</strong>
