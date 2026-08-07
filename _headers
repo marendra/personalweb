@@ -1,12 +1,10 @@
-# Custom headers for static assets served by Cloudflare Workers.
-# Hashed SvelteKit assets also get immutable headers from the adapter.
+# Custom headers for static assets served by Cloudflare Workers / Pages.
+# More specific /_app/immutable rules from the SvelteKit adapter override these.
 
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
-
-/*.html
   Cache-Control: public, max-age=60, s-maxage=3600, stale-while-revalidate=86400
 
 /robots.txt
@@ -16,4 +14,7 @@
   Cache-Control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
 
 /sitemap.xml
+  Cache-Control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
+
+/search.json
   Cache-Control: public, max-age=300, s-maxage=3600, stale-while-revalidate=86400
