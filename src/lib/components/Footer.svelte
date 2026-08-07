@@ -6,7 +6,7 @@
 	<div class="site-footer__inner">
 		<p class="site-footer__brand">{site.name}</p>
 		<p class="site-footer__note">
-			Something exciting will be put here :)
+			Personal notes on technology, energy, projects, and life outside work.
 		</p>
 		<p class="site-footer__meta">
 			<a href="/rss.xml">RSS</a>

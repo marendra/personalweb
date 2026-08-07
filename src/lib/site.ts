@@ -4,8 +4,8 @@
  */
 export const site = {
 	name: 'Marendra',
-	tagline: 'Something exciting will be put here :)',
-	description: 'Something exciting will be put here :)',
+	tagline: 'Think boldly. Move fast. Build for the real world.',
+	description: 'Think boldly. Move fast. Build for the real world.',
 	author: 'Marendra',
 	locale: 'en',
 	/** Fallback when PUBLIC_SITE_URL is unset */

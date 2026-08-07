@@ -18,6 +18,8 @@
 		rel="stylesheet"
 	/>
 	<meta name="author" content={site.author} />
+	<meta name="application-name" content={site.name} />
+	<meta property="og:site_name" content={site.name} />
 	<meta name="theme-color" content="#eef1f4" media="(prefers-color-scheme: light)" />
 	<meta name="theme-color" content="#12151a" media="(prefers-color-scheme: dark)" />
 </svelte:head>

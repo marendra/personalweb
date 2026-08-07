@@ -17,11 +17,15 @@
 	<div>
 		<p class="home-intro__eyebrow">Personal site</p>
 		<h1 id="home-title" class="home-intro__title">{site.name}</h1>
-		<p class="home-intro__lede">Energy professional. Technology builder. 20+ years turning complex problems into practical solutions</p>
+		<p class="home-intro__lede">
+			Thoughts on technology, business, energy, and the rest of life — written simply and updated
+			over time.
+		</p>
 	</div>
 	<aside class="home-intro__aside">
 		<strong>Status</strong>
-		Fresh start. Real writing, life notes, and projects are on the way.
+		Writing, life notes, projects, and a current focus page. Add Markdown under
+		<code>content/</code> to publish.
 	</aside>
 </section>
 
@@ -56,40 +60,46 @@
 
 <section class="section" aria-labelledby="writing-heading">
 	<div class="section__header">
-		<h2 id="writing-heading" class="section__title">Selected writing</h2>
+		<h2 id="writing-heading" class="section__title">Writing</h2>
 		<a class="section__link" href="/writing">All writing</a>
 	</div>
-	<p class="section__lede">Something exciting will be put here :)</p>
+	<p class="section__lede">
+		Thoughts on technology, business, energy, and things I'm learning.
+	</p>
 	{#each data.featuredWriting as item (item.href)}
 		<EntryCard {item} />
 	{:else}
-		<p class="empty-state">Something exciting will be put here :)</p>
+		<p class="empty-state">No published writing yet.</p>
 	{/each}
 </section>
 
 <section class="section" aria-labelledby="life-heading">
 	<div class="section__header">
-		<h2 id="life-heading" class="section__title">Recent life</h2>
+		<h2 id="life-heading" class="section__title">Life</h2>
 		<a class="section__link" href="/life">All life entries</a>
 	</div>
-	<p class="section__lede">Something exciting will be put here :)</p>
+	<p class="section__lede">
+		Places, experiences, fitness, family-safe stories, and life outside work.
+	</p>
 	{#each data.recentLife as item (item.href)}
 		<EntryCard {item} />
 	{:else}
-		<p class="empty-state">Something exciting will be put here :)</p>
+		<p class="empty-state">No published life entries yet.</p>
 	{/each}
 </section>
 
 <section class="section" aria-labelledby="projects-heading">
 	<div class="section__header">
-		<h2 id="projects-heading" class="section__title">Selected projects</h2>
+		<h2 id="projects-heading" class="section__title">Projects</h2>
 		<a class="section__link" href="/projects">All projects</a>
 	</div>
-	<p class="section__lede">Something exciting will be put here :)</p>
+	<p class="section__lede">
+		Things I'm building, experimenting with, or trying to understand.
+	</p>
 	{#each data.featuredProjects as item (item.href)}
 		<EntryCard {item} />
 	{:else}
-		<p class="empty-state">Something exciting will be put here :)</p>
+		<p class="empty-state">No published projects yet.</p>
 	{/each}
 </section>
 
@@ -102,10 +112,10 @@
 		{#if data.nowExcerpt}
 			<p>{data.nowExcerpt.description}</p>
 			<p style="margin-top: 0.9rem">
-				<a href={data.nowExcerpt.href}>What I am focused on</a>
+				<a href={data.nowExcerpt.href}>What I'm currently focused on</a>
 			</p>
 		{:else}
-			<p>Something exciting will be put here :)</p>
+			<p>What I'm currently working on and thinking about.</p>
 		{/if}
 	</div>
 </section>

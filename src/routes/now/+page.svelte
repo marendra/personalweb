@@ -9,10 +9,15 @@
 
 <Seo title="Now — Marendra" description={data.page.description} canonical={absoluteUrl('/now')} />
 
-<PageHero eyebrow="Now" title="What I am focused on" lede={data.page.description} />
+<PageHero
+	eyebrow="Now"
+	title="Now"
+	lede="What I'm currently working on and thinking about."
+/>
 
 <p class="article-header__meta" style="margin-bottom: 1.5rem">
-	Updated <time datetime={data.page.updated ?? data.page.date}
+	Updated
+	<time datetime={data.page.updated ?? data.page.date}
 		>{formatDate(data.page.updated ?? data.page.date)}</time
 	>
 </p>

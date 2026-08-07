@@ -1,11 +1,19 @@
 ---
 title: About
 slug: about
-description: Something exciting will be put here :)
+description: Think boldly. Move fast. Build for the real world.
 date: 2026-08-07
 category: writing
 tags: []
 status: published
 ---
 
-Something exciting will be put here :)
+## About Marendra
+
+Think boldly. Move fast. Build for the real world.
+
+This site collects writing, projects, short notes, and personal reflections.
+
+## Contact
+
+Replace this section with a preferred public contact method.

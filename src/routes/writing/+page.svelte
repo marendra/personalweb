@@ -9,14 +9,14 @@
 
 <Seo
 	title="Writing — Marendra"
-	description="Something exciting will be put here :)"
+	description="Thoughts on technology, business, energy, and things I'm learning."
 	canonical={absoluteUrl('/writing')}
 />
 
 <PageHero
 	eyebrow="Writing"
-	title="Long-form articles"
-	lede="Something exciting will be put here :)"
+	title="Writing"
+	lede="Thoughts on technology, business, energy, and things I'm learning."
 />
 
 {#if data.tags.length > 0}

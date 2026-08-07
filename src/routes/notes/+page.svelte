@@ -9,14 +9,14 @@
 
 <Seo
 	title="Notes — Marendra"
-	description="Something exciting will be put here :)"
+	description="Short observations and working fragments."
 	canonical={absoluteUrl('/notes')}
 />
 
 <PageHero
 	eyebrow="Notes"
-	title="Short observations"
-	lede="Something exciting will be put here :)"
+	title="Notes"
+	lede="Short observations — smaller than essays, still intentional."
 />
 
 {#each data.items as item (item.href)}

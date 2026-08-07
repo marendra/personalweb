@@ -24,7 +24,7 @@
 
 <Seo
 	title="Search — Marendra"
-	description="Something exciting will be put here :)"
+	description="Search published writing, notes, life entries, and projects."
 	canonical={absoluteUrl('/search')}
 />
 
