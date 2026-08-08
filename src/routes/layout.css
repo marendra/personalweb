@@ -1,23 +1,22 @@
-/* Design tokens — quiet technological intelligence */
+/* Design tokens — warm paper, dark ink, one quiet green */
 :root {
 	color-scheme: light;
 	--font-display: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;
 	--font-body: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;
 	--font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
 
-	--color-paper: #eef1f4;
-	--color-surface: #f7f9fb;
-	--color-surface-muted: #e2e7ed;
-	--color-ink: #171b21;
-	--color-text-secondary: #4a5360;
-	--color-muted: #6a7380;
-	--color-border: #cfd6de;
-	--color-border-strong: #aeb7c2;
-	--color-accent: #2f5d56;
+	--color-paper: #f2eee5;
+	--color-surface: #f7f3eb;
+	--color-surface-muted: #e8e1d5;
+	--color-ink: #24211d;
+	--color-text-secondary: #575149;
+	--color-muted: #777067;
+	--color-border: #d8d0c3;
+	--color-border-strong: #bdb3a5;
+	--color-accent: #365f4d;
 	--color-accent-soft: color-mix(in oklab, var(--color-accent) 16%, var(--color-paper));
-	--color-signal: #d65432;
-	--color-code-bg: #e6ebf0;
-	--color-focus: #2f5d56;
+	--color-code-bg: #e8e1d6;
+	--color-focus: #365f4d;
 
 	--width-shell: 72rem;
 	--width-prose: 42rem;
@@ -28,19 +27,18 @@
 
 html[data-theme='dark'] {
 	color-scheme: dark;
-	--color-paper: #12151a;
-	--color-surface: #171b21;
-	--color-surface-muted: #1f252d;
-	--color-ink: #ece8e1;
-	--color-text-secondary: #b7b3aa;
-	--color-muted: #8d928a;
-	--color-border: #2c333c;
-	--color-border-strong: #3d4652;
-	--color-accent: #8fbfb4;
+	--color-paper: #181714;
+	--color-surface: #1d1b18;
+	--color-surface-muted: #282520;
+	--color-ink: #eee8dd;
+	--color-text-secondary: #bdb5a9;
+	--color-muted: #918a80;
+	--color-border: #39352f;
+	--color-border-strong: #4c463e;
+	--color-accent: #8db7a1;
 	--color-accent-soft: color-mix(in oklab, var(--color-accent) 16%, var(--color-paper));
-	--color-signal: #ff7a55;
-	--color-code-bg: #1a2028;
-	--color-focus: #8fbfb4;
+	--color-code-bg: #24211d;
+	--color-focus: #8db7a1;
 	--grain-opacity: 0.05;
 }
 
@@ -75,13 +73,7 @@ body {
 	font-size: 1.05rem;
 	line-height: 1.7;
 	color: var(--color-ink);
-	background:
-		radial-gradient(
-			circle at top left,
-			color-mix(in oklab, var(--color-accent) 8%, transparent),
-			transparent 42%
-		),
-		linear-gradient(180deg, var(--color-surface), var(--color-paper) 28%, var(--color-paper));
+	background: var(--color-paper);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -139,7 +131,9 @@ img {
 }
 
 .section {
-	margin: 2.75rem 0;
+	margin: 0;
+	padding: 2.7rem 0 3.2rem;
+	border-top: 1px solid var(--color-border);
 }
 
 .section__header {
@@ -153,16 +147,15 @@ img {
 .section__title {
 	margin: 0;
 	font-family: var(--font-display);
-	font-size: 1.55rem;
+	font-size: 1.65rem;
 	font-weight: 500;
 	letter-spacing: -0.02em;
 }
 
 .section__link {
-	font-family: var(--font-mono);
-	font-size: 0.72rem;
-	letter-spacing: 0.06em;
-	text-transform: uppercase;
+	font-family: var(--font-body);
+	font-size: 0.92rem;
+	font-style: italic;
 	text-decoration: none;
 	color: var(--color-muted);
 	border-bottom: 1px solid transparent;
@@ -177,242 +170,90 @@ img {
 .section__lede {
 	margin: 0 0 1.25rem;
 	color: var(--color-text-secondary);
-	max-width: 36rem;
+	max-width: 34rem;
+	text-wrap: pretty;
 }
 
 .home-intro {
 	display: grid;
 	gap: 1.5rem;
-	padding: 3rem 0 2.25rem;
-	border-bottom: 1px solid var(--color-border);
+	padding: clamp(4rem, 10vw, 7.5rem) 0 clamp(4rem, 8vw, 6rem);
 	animation: rise 0.7s ease both;
 }
 
 @media (min-width: 840px) {
 	.home-intro {
-		grid-template-columns: minmax(0, 1.3fr) minmax(14rem, 0.7fr);
+		grid-template-columns: minmax(0, 1.45fr) minmax(17rem, 0.55fr);
 		align-items: end;
+		gap: clamp(3rem, 8vw, 7rem);
 	}
 }
 
 .home-intro__eyebrow {
 	margin: 0 0 0.85rem;
-	font-family: var(--font-mono);
-	font-size: 0.72rem;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
+	font-size: 1rem;
+	font-style: italic;
 	color: var(--color-accent);
 }
 
 .home-intro__title {
 	margin: 0;
 	font-family: var(--font-display);
-	font-size: clamp(2.4rem, 7vw, 4.2rem);
+	font-size: clamp(3.4rem, 9vw, 6.8rem);
 	font-weight: 500;
 	letter-spacing: -0.035em;
-	line-height: 0.98;
+	line-height: 0.9;
 	max-width: 10ch;
 }
 
 .home-intro__lede {
-	margin: 1.1rem 0 0;
-	max-width: 34rem;
-	font-size: 1.12rem;
+	margin: 1.6rem 0 0;
+	max-width: 36rem;
+	font-size: clamp(1.08rem, 2vw, 1.25rem);
 	color: var(--color-text-secondary);
 	line-height: 1.65;
+	text-wrap: pretty;
 }
 
 .home-intro__aside {
-	border-left: 1px solid var(--color-border-strong);
-	padding-left: 1.25rem;
-	font-family: var(--font-mono);
-	font-size: 0.78rem;
-	letter-spacing: 0.03em;
+	position: relative;
+	border-top: 1px solid var(--color-border-strong);
+	padding: 1.1rem 0 0;
 	color: var(--color-muted);
-	line-height: 1.7;
+	line-height: 1.45;
 	animation: rise 0.7s ease 0.12s both;
 }
 
-.home-intro__aside strong {
-	display: block;
-	color: var(--color-ink);
-	font-weight: 500;
-	margin-bottom: 0.35rem;
-	text-transform: uppercase;
-	letter-spacing: 0.08em;
-	font-size: 0.68rem;
-}
-
-.manifesto {
-	position: relative;
-	isolation: isolate;
-	overflow: hidden;
-	margin: 2rem 0 3.75rem;
-	padding: clamp(1.25rem, 3vw, 2.25rem);
-	color: var(--color-paper);
-	background: var(--color-ink);
-	box-shadow: 0.65rem 0.65rem 0 var(--color-signal);
-	animation: rise 0.7s ease 0.2s both;
-}
-
-.manifesto::before {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	inset: 0;
-	background-image:
-		linear-gradient(color-mix(in oklab, var(--color-paper) 7%, transparent) 1px, transparent 1px),
-		linear-gradient(
-			90deg,
-			color-mix(in oklab, var(--color-paper) 7%, transparent) 1px,
-			transparent 1px
-		);
-	background-size: 2.5rem 2.5rem;
-	mask-image: linear-gradient(110deg, transparent 4%, black 65%);
-}
-
-.manifesto::after {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	right: -6rem;
-	top: -9rem;
-	width: 22rem;
-	aspect-ratio: 1;
-	border: 1px solid color-mix(in oklab, var(--color-signal) 55%, transparent);
-	border-radius: 50%;
-	box-shadow:
-		0 0 0 3rem color-mix(in oklab, var(--color-signal) 8%, transparent),
-		0 0 0 6rem color-mix(in oklab, var(--color-signal) 5%, transparent);
-}
-
-.manifesto__meta {
-	display: flex;
-	justify-content: space-between;
-	gap: 1rem;
-	margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-	font-family: var(--font-mono);
-	font-size: 0.66rem;
-	line-height: 1;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	color: color-mix(in oklab, var(--color-paper) 58%, transparent);
-}
-
-.manifesto__statement {
-	display: grid;
-	gap: 0.2rem;
-	margin: 0;
-	font-family: var(--font-display);
-	font-size: clamp(2.15rem, 6.8vw, 5.7rem);
-	font-weight: 400;
-	letter-spacing: -0.055em;
-	line-height: 0.95;
-}
-
-.manifesto__line {
-	display: grid;
-	grid-template-columns: clamp(1.4rem, 4vw, 3.25rem) 1fr;
-	align-items: baseline;
-	gap: clamp(0.6rem, 2vw, 1.25rem);
-	width: fit-content;
-	transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.manifesto__line--move {
-	margin-left: clamp(0rem, 8vw, 6.5rem);
-}
-
-.manifesto__line--build {
-	margin-left: clamp(0rem, 3vw, 2.5rem);
-}
-
-.manifesto__line:hover {
-	transform: translateX(0.35rem);
-}
-
-.manifesto__line strong {
-	color: var(--color-signal);
-	font-weight: 500;
+.home-intro__aside p {
+	margin: 0 0 0.75rem;
+	font-size: 0.86rem;
 	font-style: italic;
 }
 
-.manifesto__index {
-	font-family: var(--font-mono);
-	font-size: clamp(0.55rem, 1vw, 0.7rem);
+.home-intro__aside blockquote {
+	margin: 0 0 0.85rem;
+	font-family: var(--font-display);
+	font-size: clamp(1.55rem, 3vw, 2.1rem);
 	font-weight: 400;
-	letter-spacing: 0;
-	color: color-mix(in oklab, var(--color-paper) 42%, transparent);
+	letter-spacing: -0.025em;
+	line-height: 1.15;
+	color: var(--color-ink);
 }
 
-.manifesto__trajectory {
-	display: grid;
-	grid-template-columns: 1fr auto;
-	align-items: center;
-	position: relative;
-	margin-top: clamp(1.8rem, 4vw, 3.25rem);
-	font-family: var(--font-mono);
-	font-size: 0.62rem;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	color: color-mix(in oklab, var(--color-paper) 58%, transparent);
+.home-intro__aside blockquote em {
+	color: var(--color-accent);
 }
 
-.manifesto__track {
+.home-intro__aside small {
 	display: block;
-	height: 1px;
-	background: color-mix(in oklab, var(--color-paper) 28%, transparent);
-}
-
-.manifesto__marker {
-	position: absolute;
-	left: 68%;
-	width: 0.55rem;
-	height: 0.55rem;
-	border-radius: 50%;
-	background: var(--color-signal);
-	box-shadow: 0 0 0 0.28rem color-mix(in oklab, var(--color-signal) 18%, transparent);
-	animation: pulse-marker 2.8s ease-in-out infinite;
-}
-
-.manifesto__destination {
-	padding-left: 0.9rem;
-}
-
-@keyframes pulse-marker {
-	0%,
-	100% {
-		transform: scale(0.9);
-	}
-	50% {
-		transform: scale(1.15);
-	}
-}
-
-@media (max-width: 560px) {
-	.manifesto {
-		box-shadow: 0.4rem 0.4rem 0 var(--color-signal);
-	}
-
-	.manifesto__line--move,
-	.manifesto__line--build {
-		margin-left: 0;
-	}
-
-	.manifesto__statement {
-		font-size: clamp(2rem, 10.7vw, 3.2rem);
-		line-height: 1;
-	}
-
-	.manifesto__trajectory {
-		margin-top: 2rem;
-	}
+	font-size: 0.76rem;
+	font-style: italic;
 }
 
 .now-panel {
-	border: 1px solid var(--color-border);
-	background: color-mix(in oklab, var(--color-surface) 80%, transparent);
-	padding: 1.35rem 1.4rem;
+	max-width: 38rem;
+	border-left: 2px solid var(--color-accent);
+	padding: 0.1rem 0 0.1rem 1.1rem;
 }
 
 .now-panel p {
@@ -421,12 +262,14 @@ img {
 }
 
 .now-panel a {
-	font-family: var(--font-mono);
-	font-size: 0.72rem;
-	letter-spacing: 0.05em;
-	text-transform: uppercase;
+	font-size: 0.95rem;
+	font-style: italic;
 	text-decoration: none;
 	border-bottom: 1px solid var(--color-accent);
+}
+
+.now-panel__link {
+	margin-top: 0.9rem !important;
 }
 
 .prose {
@@ -590,10 +433,9 @@ img {
 }
 
 .empty-state {
-	padding: 1.25rem 0;
+	padding: 1rem 0;
 	color: var(--color-muted);
-	font-family: var(--font-mono);
-	font-size: 0.85rem;
+	font-style: italic;
 }
 
 @keyframes rise {
@@ -609,14 +451,8 @@ img {
 
 @media (prefers-reduced-motion: reduce) {
 	.home-intro,
-	.home-intro__aside,
-	.manifesto,
-	.manifesto__marker {
+	.home-intro__aside {
 		animation: none;
-	}
-
-	.manifesto__line {
-		transition: none;
 	}
 }
 

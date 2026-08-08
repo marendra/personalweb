@@ -7,7 +7,7 @@ category: life
 tags:
   - fitness
   - places
-status: published
+status: draft
 featured: true
 ---
 

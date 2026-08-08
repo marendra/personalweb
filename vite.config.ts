@@ -13,6 +13,7 @@ export default defineConfig({
 			adapter: adapter(),
 			prerender: {
 				handleHttpError: 'warn',
+				handleUnseenRoutes: 'ignore',
 				entries: ['*', '/sitemap.xml', '/rss.xml', '/search.json']
 			}
 		})

@@ -4,8 +4,9 @@
  */
 export const site = {
 	name: 'Marendra',
-	tagline: 'Think boldly. Move fast. Build for the real world.',
-	description: 'Think boldly. Move fast. Build for the real world.',
+	tagline: 'Notes on energy, technology, and ordinary life',
+	description:
+		'Marendra writes about commercial energy, technology, personal projects, and ordinary life in Indonesia.',
 	author: 'Marendra',
 	locale: 'en',
 	/** Fallback when PUBLIC_SITE_URL is unset */

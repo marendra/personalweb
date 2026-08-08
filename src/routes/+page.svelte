@@ -15,47 +15,22 @@
 
 <section class="home-intro" aria-labelledby="home-title">
 	<div>
-		<p class="home-intro__eyebrow">Personal site</p>
-		<h1 id="home-title" class="home-intro__title">{site.name}</h1>
+		<p class="home-intro__eyebrow">Hello, I'm</p>
+		<h1 id="home-title" class="home-intro__title">{site.name}.</h1>
 		<p class="home-intro__lede">
-			Thoughts on technology, business, energy, and the rest of life — written simply and updated
-			over time.
+			I work around commercial energy and technology in Indonesia. This is where I keep notes on
+			work, things I build, and life away from the screen.
 		</p>
 	</div>
-	<aside class="home-intro__aside">
-		<strong>Status</strong>
-		Writing, life notes, projects, and a current focus page. Add Markdown under
-		<code>content/</code> to publish.
+	<aside class="home-intro__aside" aria-label="Personal motto">
+		<p>A note to myself</p>
+		<blockquote>
+			Think boldly.<br />
+			Move fast.<br />
+			<em>Build for the real world.</em>
+		</blockquote>
+		<small>Written here so I don't forget.</small>
 	</aside>
-</section>
-
-<section class="manifesto" aria-labelledby="manifesto-heading">
-	<div class="manifesto__meta" aria-hidden="true">
-		<span>Operating principle</span>
-		<span>01—03</span>
-	</div>
-
-	<h2 id="manifesto-heading" class="visually-hidden">Personal motto</h2>
-	<blockquote class="manifesto__statement">
-		<span class="manifesto__line manifesto__line--think">
-			<span class="manifesto__index" aria-hidden="true">01</span>
-			<span><strong>Think</strong> boldly.</span>
-		</span>
-		<span class="manifesto__line manifesto__line--move">
-			<span class="manifesto__index" aria-hidden="true">02</span>
-			<span><strong>Move</strong> fast.</span>
-		</span>
-		<span class="manifesto__line manifesto__line--build">
-			<span class="manifesto__index" aria-hidden="true">03</span>
-			<span><strong>Build</strong> for the real world.</span>
-		</span>
-	</blockquote>
-
-	<div class="manifesto__trajectory" aria-hidden="true">
-		<span class="manifesto__track"></span>
-		<span class="manifesto__marker"></span>
-		<span class="manifesto__destination">Make it matter</span>
-	</div>
 </section>
 
 <section class="section" aria-labelledby="writing-heading">
@@ -63,13 +38,13 @@
 		<h2 id="writing-heading" class="section__title">Writing</h2>
 		<a class="section__link" href="/writing">All writing</a>
 	</div>
-	<p class="section__lede">
-		Thoughts on technology, business, energy, and things I'm learning.
-	</p>
+	<p class="section__lede">Thoughts on technology, business, energy, and things I'm learning.</p>
 	{#each data.featuredWriting as item (item.href)}
 		<EntryCard {item} />
 	{:else}
-		<p class="empty-state">No published writing yet.</p>
+		<p class="empty-state">
+			Nothing published here yet. The first piece is still being argued with.
+		</p>
 	{/each}
 </section>
 
@@ -84,7 +59,7 @@
 	{#each data.recentLife as item (item.href)}
 		<EntryCard {item} />
 	{:else}
-		<p class="empty-state">No published life entries yet.</p>
+		<p class="empty-state">Keeping this part offline for now.</p>
 	{/each}
 </section>
 
@@ -93,13 +68,11 @@
 		<h2 id="projects-heading" class="section__title">Projects</h2>
 		<a class="section__link" href="/projects">All projects</a>
 	</div>
-	<p class="section__lede">
-		Things I'm building, experimenting with, or trying to understand.
-	</p>
+	<p class="section__lede">Things I'm building, experimenting with, or trying to understand.</p>
 	{#each data.featuredProjects as item (item.href)}
 		<EntryCard {item} />
 	{:else}
-		<p class="empty-state">No published projects yet.</p>
+		<p class="empty-state">Project notes will turn up here when they're ready.</p>
 	{/each}
 </section>
 
@@ -111,7 +84,7 @@
 	<div class="now-panel">
 		{#if data.nowExcerpt}
 			<p>{data.nowExcerpt.description}</p>
-			<p style="margin-top: 0.9rem">
+			<p class="now-panel__link">
 				<a href={data.nowExcerpt.href}>What I'm currently focused on</a>
 			</p>
 		{:else}

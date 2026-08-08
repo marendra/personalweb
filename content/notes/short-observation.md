@@ -6,7 +6,7 @@ date: 2026-08-05
 category: notes
 tags:
   - notes
-status: published
+status: draft
 featured: true
 ---
 

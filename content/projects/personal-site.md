@@ -1,7 +1,7 @@
 ---
 title: Personal site
 slug: personal-site
-description: Example project entry for something being built and refined in public.
+description: A small SvelteKit site for writing without turning every thought into a social post.
 date: 2026-08-07
 category: projects
 tags:
@@ -11,14 +11,14 @@ status: published
 featured: true
 ---
 
-This is an example **Projects** post.
+I wanted a place on the internet that felt more permanent than a feed and less formal than a portfolio. So I built this one.
 
-Use this folder for things you are building, experimenting with, or trying to understand.
+It runs on SvelteKit and Cloudflare Workers. The posts are plain Markdown files, which means publishing can stay simple: write, edit, push.
 
-## Project template
+## Current state
 
 - **Status:** In progress
 - **Stack:** SvelteKit, TypeScript, Cloudflare
-- **Goal:** A calm personal website powered by Markdown
+- **Goal:** A personal website that stays easy to maintain
 
-Replace this with your own public project notes. Avoid employer systems and customer names.
+The design will probably keep changing. That is part of having a personal site rather than a finished product.

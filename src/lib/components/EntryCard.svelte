@@ -39,7 +39,7 @@
 
 <style>
 	.entry {
-		padding: 1.25rem 0;
+		padding: 1.35rem 0 1.5rem;
 		border-bottom: 1px solid var(--color-border);
 	}
 
@@ -65,9 +65,8 @@
 		margin: 0 0 0.55rem;
 		font-family: var(--font-mono);
 		font-size: 0.75rem;
-		letter-spacing: 0.03em;
+		letter-spacing: 0.01em;
 		color: var(--color-muted);
-		text-transform: uppercase;
 	}
 
 	.entry__category {
@@ -77,7 +76,7 @@
 	.entry__title {
 		margin: 0 0 0.45rem;
 		font-family: var(--font-display);
-		font-size: clamp(1.2rem, 2vw, 1.45rem);
+		font-size: clamp(1.3rem, 2vw, 1.6rem);
 		font-weight: 500;
 		line-height: 1.25;
 		letter-spacing: -0.01em;
@@ -85,6 +84,7 @@
 
 	.entry__description {
 		margin: 0;
+		max-width: 42rem;
 		color: var(--color-text-secondary);
 		line-height: 1.6;
 	}

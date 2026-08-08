@@ -77,7 +77,6 @@
 			onclick={toggleTheme}
 			aria-label={`Switch to ${currentTheme === 'dark' ? 'light' : 'black'} mode`}
 		>
-			<span class="theme-toggle__icon" aria-hidden="true"></span>
 			<span class="theme-toggle__label">
 				{currentTheme === 'dark' ? 'Light mode' : 'Black mode'}
 			</span>
@@ -108,7 +107,7 @@
 		top: 0;
 		z-index: 40;
 		border-bottom: 1px solid var(--color-border);
-		background: color-mix(in oklab, var(--color-paper) 88%, transparent);
+		background: color-mix(in oklab, var(--color-paper) 92%, transparent);
 		backdrop-filter: blur(10px);
 	}
 
@@ -169,10 +168,9 @@
 	}
 
 	.nav a {
-		font-family: var(--font-mono);
-		font-size: 0.72rem;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
+		font-family: var(--font-body);
+		font-size: 0.9rem;
+		letter-spacing: 0;
 		text-decoration: none;
 		color: var(--color-muted);
 		border-bottom: 1px solid transparent;
@@ -192,15 +190,14 @@
 	.theme-toggle {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.4rem;
-		border: 1px solid var(--color-border-strong);
+		border: 0;
+		border-bottom: 1px solid var(--color-border-strong);
 		background: transparent;
 		color: var(--color-muted);
-		font-family: var(--font-mono);
-		font-size: 0.68rem;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		padding: 0.35rem 0.55rem;
+		font-family: var(--font-body);
+		font-size: 0.82rem;
+		font-style: italic;
+		padding: 0.15rem 0;
 		cursor: pointer;
 		transition:
 			color 0.2s ease,
@@ -211,14 +208,6 @@
 	.theme-toggle:focus-visible {
 		color: var(--color-ink);
 		border-color: var(--color-ink);
-	}
-
-	.theme-toggle__icon {
-		width: 0.55rem;
-		height: 0.55rem;
-		border-radius: 999px;
-		border: 1px solid currentColor;
-		background: var(--color-accent-soft);
 	}
 
 	@media (max-width: 820px) {
