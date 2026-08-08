@@ -39,7 +39,7 @@ html[data-theme='dark'] {
 	--color-accent-soft: color-mix(in oklab, var(--color-accent) 16%, var(--color-paper));
 	--color-code-bg: #24211d;
 	--color-focus: #8db7a1;
-	--grain-opacity: 0.05;
+	--grain-opacity: 0;
 }
 
 *,
