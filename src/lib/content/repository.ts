@@ -7,6 +7,7 @@ import {
 	splitFrontmatter
 } from './parse';
 import { renderMarkdown } from './markdown';
+import { CONTENT_CATEGORIES } from './types';
 import type {
 	AdjacentContent,
 	ContentCategory,
@@ -59,14 +60,16 @@ function parseAll(): ContentItem[] {
 	for (const [key, raw] of Object.entries(rawFiles)) {
 		const sourcePath = sourcePathFromKey(key);
 		const { data, content } = splitFrontmatter(raw);
-		const frontmatter = parseFrontmatter(data, sourcePath, fallbackSlugFromPath(sourcePath));
-
-		const expectedCategory = sourcePath.split('/')[0] as ContentCategory | undefined;
-		if (expectedCategory && frontmatter.category !== expectedCategory) {
-			throw new Error(
-				`${sourcePath}: category "${frontmatter.category}" does not match folder "${expectedCategory}"`
-			);
-		}
+		const folder = sourcePath.split('/')[0];
+		const inferredCategory = (CONTENT_CATEGORIES as readonly string[]).includes(folder)
+			? (folder as ContentCategory)
+			: undefined;
+		const frontmatter = parseFrontmatter(
+			data,
+			sourcePath,
+			fallbackSlugFromPath(sourcePath),
+			inferredCategory
+		);
 
 		partials.push({ frontmatter, body: content.trim(), sourcePath });
 	}

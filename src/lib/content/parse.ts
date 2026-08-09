@@ -65,6 +65,26 @@ function asCategory(value: unknown, sourcePath?: string): ContentCategory {
 	return category as ContentCategory;
 }
 
+function resolveCategory(
+	raw: Record<string, unknown>,
+	sourcePath: string | undefined,
+	inferredCategory: ContentCategory | undefined
+): ContentCategory {
+	if (inferredCategory && (CONTENT_CATEGORIES as readonly string[]).includes(inferredCategory)) {
+		const rawCategory = asOptionalString(raw.category);
+		if (rawCategory && rawCategory !== inferredCategory) {
+			if (!(CONTENT_CATEGORIES as readonly string[]).includes(rawCategory)) {
+				throw new ContentParseError(
+					`Invalid category "${rawCategory}". Expected one of: ${CONTENT_CATEGORIES.join(', ')}`,
+					sourcePath
+				);
+			}
+		}
+		return inferredCategory;
+	}
+	return asCategory(raw.category, sourcePath);
+}
+
 function asStatus(value: unknown, sourcePath?: string): ContentStatus {
 	const status = asString(value, 'status', sourcePath);
 	if (!(CONTENT_STATUSES as readonly string[]).includes(status)) {
@@ -118,7 +138,8 @@ function slugify(input: string): string {
 export function parseFrontmatter(
 	raw: unknown,
 	sourcePath?: string,
-	fallbackSlug?: string
+	fallbackSlug?: string,
+	inferredCategory?: ContentCategory
 ): ContentFrontmatter {
 	if (!isRecord(raw)) {
 		throw new ContentParseError('Frontmatter must be a YAML object', sourcePath);
@@ -140,7 +161,7 @@ export function parseFrontmatter(
 		description: asString(raw.description, 'description', sourcePath),
 		date: normalizeDate(raw.date, 'date', sourcePath),
 		...(updated ? { updated: normalizeDate(raw.updated ?? updated, 'updated', sourcePath) } : {}),
-		category: asCategory(raw.category, sourcePath),
+		category: resolveCategory(raw, sourcePath, inferredCategory),
 		tags: asStringArray(raw.tags),
 		status: asStatus(raw.status, sourcePath),
 		featured: asBoolean(raw.featured, false),
